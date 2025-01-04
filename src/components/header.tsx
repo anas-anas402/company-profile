@@ -1,11 +1,18 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false); // State untuk toggling menu
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <nav className="fixed z-10 w-full p-4 md:px-12 shadow-lg bg-white">
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between items-center">
         <div className="w-[100px] h-[30px] relative">
           <Link href="/">
             <Image
@@ -16,7 +23,14 @@ export default function Header() {
             />
           </Link>
         </div>
-        <ul className="flex flex-row gap-5">
+        <button className="md:hidden text-gray-600" onClick={toggleMenu}>
+          {isOpen ? "✖" : "☰"}
+        </button>
+        <ul
+          className={`absolute md:relative md:flex md:items-center md:gap-5 bg-white md:bg-transparent transition-all ${
+            isOpen ? "top-12 left-0 w-full md:w-auto p-4" : "hidden md:flex"
+          }`}
+        >
           <li className="group">
             <Link
               href="/"
