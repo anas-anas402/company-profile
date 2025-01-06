@@ -5,16 +5,16 @@ import {
 } from "@/utils/get-contentful-data";
 import Image from "next/image";
 
-// Definisikan tipe untuk item dalam tim
 interface TeamMember {
-  slug: string;
-  teamPhoto: string;
   name: string;
+  slug: string;
   title: string;
+  expertise: string;
+  contact: string;
   description: string;
+  teamPhoto: string;
 }
 
-// Definisikan properti untuk komponen TeamSection
 interface TeamSectionProps {
   title: string;
   team?: TeamMember[];
@@ -98,30 +98,33 @@ export default async function AboutPage() {
   );
 }
 
-// Menggunakan tipe untuk mendefinisikan properti yang diterima
 function TeamSection({ title, team }: TeamSectionProps) {
   return (
     <div className="flex flex-col justify-center items-center mt-12 w-full">
       <h2 className="mt-12 text-2xl font-semibold">{title}</h2>
       <div className="flex flex-wrap justify-center gap-10 mt-5">
-        {team?.map((item) => (
-          <div
-            key={item.slug}
-            className="flex flex-col justify-center items-center bg-white p-6 rounded-lg shadow-lg w-[300px]"
-          >
-            <div className="relative w-[100px] h-[100px] mb-4">
-              <Image
-                src={item.teamPhoto}
-                alt="Team Photo"
-                fill
-                className="object-cover rounded-full"
-              />
+        {team?.length ? (
+          team.map((item) => (
+            <div
+              key={item.slug}
+              className="flex flex-col justify-center items-center bg-white p-6 rounded-lg shadow-lg w-[300px]"
+            >
+              <div className="relative w-[100px] h-[100px] mb-4">
+                <Image
+                  src={item.teamPhoto}
+                  alt="Team Photo"
+                  fill
+                  className="object-cover rounded-full"
+                />
+              </div>
+              <span className="text-xl font-semibold">{item.name}</span>
+              <span className="text-sm text-gray-600">{item.title}</span>
+              <p className="text-base text-gray-700">{item.description}</p>
             </div>
-            <span className="text-xl font-semibold">{item.name}</span>
-            <span className="text-sm text-gray-600">{item.title}</span>
-            <p className="text-base text-gray-700">{item.description}</p>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="text-gray-500">No team members available.</p>
+        )}
       </div>
     </div>
   );

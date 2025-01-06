@@ -5,6 +5,21 @@ import {
 } from "@/utils/get-contentful-data";
 import Image from "next/image";
 
+interface TeamMember {
+  name: string;
+  slug: string;
+  title: string;
+  expertise: string;
+  contact: string;
+  description: string;
+  teamPhoto: string;
+}
+
+interface TeamSectionProps {
+  title: string;
+  team?: TeamMember[];
+}
+
 export default async function TeamPage() {
   const teamFe = await getTeamFrontEnd();
   const teamBe = await getTeamBackEnd();
@@ -24,7 +39,7 @@ export default async function TeamPage() {
   );
 }
 
-function TeamSection({ title, team }) {
+function TeamSection({ title, team }: TeamSectionProps) {
   return (
     <div className="flex flex-col justify-center items-center mt-12 w-full">
       <h2 className="mt-12 text-2xl font-semibold">{title}</h2>
