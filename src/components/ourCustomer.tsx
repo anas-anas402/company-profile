@@ -17,7 +17,7 @@ export default async function OurCustomerSection() {
               className="relative w-[160px] h-[80px] flex items-center justify-center"
             >
               <Image
-                src={item?.brandLogo as string}
+                src={item?.customerLogo as string}
                 alt="Brand Logo"
                 fill
                 className="object-cover"

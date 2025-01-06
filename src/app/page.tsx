@@ -1,6 +1,5 @@
 import CompanyOverviewSection from "@/components/companyOverview";
 import CompanyServicesSection from "@/components/companyServices";
-import Footer from "@/components/footer";
 import HeroSection from "@/components/hero";
 import OurCustomerSection from "@/components/ourCustomer";
 import TestimonialSection from "@/components/testimonial";

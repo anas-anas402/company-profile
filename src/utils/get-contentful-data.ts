@@ -1,5 +1,28 @@
 import * as contentful from "contentful";
 
+interface ContentfulImage {
+  fields: { file: { url: string } };
+}
+
+interface Item {
+  fields: {
+    customerLogo: ContentfulImage;
+    clientPhoto: ContentfulImage;
+    teamPhoto: ContentfulImage;
+    slug: string;
+    name: string;
+    job: string;
+    feedback: string;
+    title: string;
+    expertise: string;
+    description: string;
+    clientName: string;
+    clientJob: string;
+    clientFeedback: string;
+    contact: string;
+  };
+}
+
 const client = contentful.createClient({
   space: "xi790hf9mml3",
   environment: "master",
@@ -47,14 +70,14 @@ export async function getAllCompanyService() {
 
 export async function getAllCompanyCustomer() {
   try {
-    const data = await client.getEntries({
+    const data = (await client.getEntries({
       content_type: "companyCustomers",
-    });
-    return data.items.map((item) => {
+    })) as unknown as { items: [] };
+    return data.items.map((item: Item) => {
       const brandUrl = item?.fields?.customerLogo?.fields?.file.url;
       return {
         slug: item.fields.slug,
-        brandLogo: `https:${brandUrl}`,
+        customerLogo: `https:${brandUrl}`,
       };
     });
   } catch (error) {
@@ -64,10 +87,10 @@ export async function getAllCompanyCustomer() {
 
 export async function getAllTestimonial() {
   try {
-    const data = await client.getEntries({
+    const data = (await client.getEntries({
       content_type: "companyTestimonials",
-    });
-    return data.items.map((item) => {
+    })) as unknown as { items: [] };
+    return data.items.map((item: Item) => {
       const clientPhotoUrl = item?.fields?.clientPhoto?.fields?.file.url;
       return {
         name: item.fields.clientName,
@@ -84,10 +107,10 @@ export async function getAllTestimonial() {
 
 export async function getTeamFrontEnd() {
   try {
-    const data = await client.getEntries({
+    const data = (await client.getEntries({
       content_type: "companyTeamFrontEnd",
-    });
-    return data.items.map((item) => {
+    })) as unknown as { items: [] };
+    return data.items.map((item: Item) => {
       const teamPhotoUrl = item?.fields?.teamPhoto?.fields?.file.url;
       return {
         name: item.fields.name,
@@ -105,10 +128,10 @@ export async function getTeamFrontEnd() {
 }
 export async function getTeamBackEnd() {
   try {
-    const data = await client.getEntries({
+    const data = (await client.getEntries({
       content_type: "companyTeamBackEnd",
-    });
-    return data.items.map((item) => {
+    })) as unknown as { items: [] };
+    return data.items.map((item: Item) => {
       const teamPhotoUrl = item?.fields?.teamPhoto?.fields?.file.url;
       return {
         name: item.fields.name,
@@ -126,10 +149,10 @@ export async function getTeamBackEnd() {
 }
 export async function getTeamUiUx() {
   try {
-    const data = await client.getEntries({
+    const data = (await client.getEntries({
       content_type: "companyTeamUiux",
-    });
-    return data.items.map((item) => {
+    })) as unknown as { items: [] };
+    return data.items.map((item: Item) => {
       const teamPhotoUrl = item?.fields?.teamPhoto?.fields?.file.url;
       return {
         name: item.fields.name,
