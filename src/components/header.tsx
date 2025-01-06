@@ -4,10 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false); // State untuk toggling menu
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -35,6 +39,7 @@ export default function Header() {
             <Link
               href="/"
               className="relative group-hover:text-lg transition-all"
+              onClick={handleLinkClick}
             >
               Home
               <span className="absolute bottom-0 h-[2px] bg-blue-500 left-0 w-0 group-hover:w-full transition-all"></span>
@@ -44,6 +49,7 @@ export default function Header() {
             <Link
               href="/about"
               className="relative group-hover:text-lg transition-all"
+              onClick={handleLinkClick}
             >
               About
               <span className="absolute bottom-0 h-[2px] bg-blue-500 left-0 w-0 group-hover:w-full transition-all"></span>
@@ -53,6 +59,7 @@ export default function Header() {
             <Link
               href="/service"
               className="relative group-hover:text-lg transition-all"
+              onClick={handleLinkClick}
             >
               Service
               <span className="absolute bottom-0 h-[2px] bg-blue-500 left-0 w-0 group-hover:w-full transition-all"></span>
@@ -62,6 +69,7 @@ export default function Header() {
             <Link
               href="/teams"
               className="relative group-hover:text-lg transition-all"
+              onClick={handleLinkClick}
             >
               Teams
               <span className="absolute bottom-0 h-[2px] bg-blue-500 left-0 w-0 group-hover:w-full transition-all"></span>
@@ -71,6 +79,7 @@ export default function Header() {
             <Link
               href="#contact"
               className="relative group-hover:text-lg transition-all"
+              onClick={handleLinkClick}
             >
               Contact
               <span className="absolute bottom-0 h-[2px] bg-blue-500 left-0 w-0 group-hover:w-full transition-all"></span>
