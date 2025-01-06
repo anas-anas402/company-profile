@@ -5,6 +5,21 @@ import {
 } from "@/utils/get-contentful-data";
 import Image from "next/image";
 
+// Definisikan tipe untuk item dalam tim
+interface TeamMember {
+  slug: string;
+  teamPhoto: string;
+  name: string;
+  title: string;
+  description: string;
+}
+
+// Definisikan properti untuk komponen TeamSection
+interface TeamSectionProps {
+  title: string;
+  team?: TeamMember[];
+}
+
 export default async function AboutPage() {
   const teamFe = await getTeamFrontEnd();
   const teamBe = await getTeamBackEnd();
@@ -83,7 +98,8 @@ export default async function AboutPage() {
   );
 }
 
-function TeamSection({ title, team }) {
+// Menggunakan tipe untuk mendefinisikan properti yang diterima
+function TeamSection({ title, team }: TeamSectionProps) {
   return (
     <div className="flex flex-col justify-center items-center mt-12 w-full">
       <h2 className="mt-12 text-2xl font-semibold">{title}</h2>
