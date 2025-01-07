@@ -17,15 +17,8 @@ export default function Header() {
   return (
     <nav className="fixed z-10 w-full p-4 md:px-12 shadow-lg bg-white">
       <div className="flex flex-row justify-between items-center">
-        <div className="w-[100px] h-[30px] relative">
-          <Link href="/">
-            <Image
-              src="/faithco-logo.svg"
-              alt="Faith Company Logo"
-              fill
-              className="object-cover"
-            />
-          </Link>
+        <div>
+          <p>ABC Inc.</p>
         </div>
         <button className="md:hidden text-gray-600" onClick={toggleMenu}>
           {isOpen ? "✖" : "☰"}

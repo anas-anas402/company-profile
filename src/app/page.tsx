@@ -10,7 +10,7 @@ export default function Home() {
       <HeroSection />
       <CompanyOverviewSection />
       <CompanyServicesSection />
-      <OurCustomerSection />
+
       <TestimonialSection />
     </section>
   );

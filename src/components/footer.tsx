@@ -11,13 +11,13 @@ export default function Footer() {
               Location
             </h3>
             <a
-              href="https://www.google.com/maps?q=Boston,USA"
+              href="https://maps.app.goo.gl/MoxmSJzE8TCe5d2s7"
               target="_blank"
               rel="noopener noreferrer"
               className="relative w-[100%] md:w-[280px] h-[150px] cursor-pointer"
             >
               <Image
-                src="/map.webp"
+                src="/map-picture.png"
                 alt="Map Image"
                 fill
                 className="object-cover rounded-lg shadow-md"
@@ -64,7 +64,7 @@ export default function Footer() {
                   href="https://facebook.com/faithco"
                   className="text-sm font-medium"
                 >
-                  faithco
+                  ABC Company
                 </Link>
               </div>
               <div className="flex flex-row gap-2 items-center mt-3">
@@ -80,7 +80,7 @@ export default function Footer() {
                   href="https://instagram.com/faithco"
                   className="text-sm font-medium"
                 >
-                  faithco
+                  ABC Company
                 </Link>
               </div>
               <div className="flex flex-row gap-2 items-center mt-3">
@@ -98,14 +98,14 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  faithco@mail.com
+                  mail@abc.inc.com
                 </a>
               </div>
             </div>
           </div>
         </div>
         <div className="mt-8 text-center text-[#414141]">
-          <p>&copy; 2023 Faithco. All rights reserved.</p>
+          <p>&copy; 2024 ABC Company. All rights reserved.</p>
         </div>
       </div>
     </footer>
