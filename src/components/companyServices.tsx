@@ -1,9 +1,9 @@
-import { getAllCompanyService } from "@/utils/get-contentful-data";
+// import { getAllCompanyService } from "@/utils/get-contentful-data";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function CompanyServicesSection() {
-  const services = await getAllCompanyService();
+  // const services = await getAllCompanyService();
 
   return (
     <section className="px-4 md:px-24 mt-24">

@@ -1,29 +1,28 @@
-import {
-  getTeamBackEnd,
-  getTeamFrontEnd,
-  getTeamUiUx,
-} from "@/utils/get-contentful-data";
-import Image from "next/image";
+import // getTeamBackEnd,
+// getTeamFrontEnd,
+// getTeamUiUx,
+"@/utils/get-contentful-data";
+// import Image from "next/image";
 
-interface TeamMember {
-  name: string;
-  slug: string;
-  title: string;
-  expertise: string;
-  contact: string;
-  description: string;
-  teamPhoto: string;
-}
+// interface TeamMember {
+//   name: string;
+//   slug: string;
+//   title: string;
+//   expertise: string;
+//   contact: string;
+//   description: string;
+//   teamPhoto: string;
+// }
 
-interface TeamSectionProps {
-  title: string;
-  team?: TeamMember[];
-}
+// interface TeamSectionProps {
+//   title: string;
+//   team?: TeamMember[];
+// }
 
 export default async function AboutPage() {
-  const teamFe = await getTeamFrontEnd();
-  const teamBe = await getTeamBackEnd();
-  const teamUiUx = await getTeamUiUx();
+  // const teamFe = await getTeamFrontEnd();
+  // const teamBe = await getTeamBackEnd();
+  // const teamUiUx = await getTeamUiUx();
 
   return (
     <section className="pt-16 min-h-screen">

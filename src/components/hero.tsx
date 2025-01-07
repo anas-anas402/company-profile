@@ -7,7 +7,7 @@ export default function HeroSection() {
             IT Solution Company
           </h1>
           <span className="mt-3 text-lg md:text-xl ">
-            "Empowering Innovation, Driving Success."
+            Empowering Innovation, Driving Success.
           </span>
           <p className="mt-4 text-sm md:text-base font-light ">
             Lorem ipsum dolor sit amet consectetur. Diam volutpat morbi

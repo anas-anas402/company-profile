@@ -1,4 +1,4 @@
-import TestimonialSection from "@/components/testimonial";
+// import TestimonialSection from "@/components/testimonial";
 
 export default function ServicePage() {
   return (
